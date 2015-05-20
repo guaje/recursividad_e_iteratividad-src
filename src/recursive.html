@@ -1,0 +1,313 @@
+<section>
+	<section data-markdown>
+		## Funciones Recursivas
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		## Funciones Recursivas: Definiciones
+
+		- __Función recursiva__: Es una función que se define en términos de si misma, es decir, que el resultado de la función depende de resultados de la misma función con otros valores.
+
+		- <!-- .element: class="fragment" -->
+		__Punto de ruptura__: Es un  valor del argumento para el cual la función no tiene que ser calculada de nuevo en otros valores.
+		</script>
+	</section>
+
+	<section>
+		<h2>Funciones Recursivas: Ejemplo</h2>
+
+		<p>
+			En este ejemplo se definirá una función recursiva que permita hallar un número real elevado a un número natural.
+		</p>
+
+		<p class="fragment">
+			Para expresar una función que calculé esta operación, en primera instancia se construye la expresión potencia:
+			$$\mathbb{R} \times \mathbb{N} \rightarrow \mathbb{R}$$
+		</p>
+
+		<p class="fragment">
+			que define la función que tiene como entrada un número real que representa la base y un número natural que indica el exponente, y como salida se obtendrá un número real que será la potencia.
+		</p>
+	</section>
+
+	<section>
+		<h2>Funciones Recursivas: Ejemplo</h2>
+
+		<p>
+			Ahora observesé que en general si se tiene una base \(b\) y un exponente \(n\), entonces por definición:
+
+			$$b^n = \underbrace{b * b * b * \dots * b * b}_\text{$n$ veces}$$
+		</p>
+
+		<p class="fragment">
+			si se usa la propiedad asociativa del producto de números reales, se tiene que:
+
+			$$b^n = \underbrace{b * b * b * \dots * b * b}_\text{$n$ veces} = \underbrace{(b * b * \dots * b * b)}_\text{$n-1$ veces} * b$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Funciones Recursivas: Ejemplo</h2>
+
+		<p>
+			lo que es equivalente a:
+
+			$$b^n = \underbrace{(b * b * \dots * b * b)}_\text{$n-1$ veces} * b = b^{n-1} * b$$
+		</p>
+
+		<p class="fragment">
+			A partir de esta observación se puede dar una definición recursiva usando funciones.
+		</p>
+
+		<p class="fragment">
+			* Por facilidad, aquí se asumirá que \(0^0 = 1\).
+		</p>
+	</section>
+
+	<section>
+		<h2>Funciones Recursivas: Ejemplo</h2>
+
+		<p>
+			La declaración de esta función junto con su cuerpo se hará de la siguiente manera:
+		</p>
+
+		<p class="fragment">
+			<i>potencia(b, n)</i> = <i>p</i>
+		</p>
+
+		<p class="fragment">
+			Si se establecen las variables:
+		</p>
+
+		<ul class="fragment">
+			<li>b := Base</li>
+			<li>n := Exponente</li>
+			<li>p := Potencia \(b^n\)</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Funciones Recursivas: Ejemplo</h2>
+
+		<p>
+			entonces:
+			<br>
+			$$potencia : \mathbb{R} \times \mathbb{N} \rightarrow \mathbb{R}$$
+			<br>
+			$$􏰄(b, n) \rightarrow \begin{cases} 1, & \text{si $n = 0$;} \\ potencia(b, n - 1) * b, & \text{en otro caso.}\end{cases}$$
+		</p>
+
+		<p class="fragment">
+		</p>
+	</section>
+
+	<section data-markdown>
+		## Funciones Recursivas: Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+float potencia(float b, int n)
+{
+	if(n == 0)
+	{
+	    return 1;
+	}
+	return potencia(b, n - 1) * b;
+}
+
+int main()
+{
+	float b = 0;
+	int n = 0;
+	float y = 0;
+	cout << "Ingrese la base: \t";
+	cin >> b;
+	cout << "Ingrese el exponente: \t";
+	cin >> n;
+	y = potencia(b, n);
+	cout << b << " elevado a la " << n;
+	cout << " es igual a: " << y << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones Recursivas: Ejemplo en Python
+
+```python
+def potencia(b, n):
+	if n == 0:
+	    return 1
+	return potencia(b, n - 1) * b
+
+b = float(input("Ingrese la base: \t"))
+n = float(input("Ingrese el exponente: \t"))
+y = potencia(b, n)
+print(str(b) + " elevado a la " + str(n), end="")
+print(" es igual a: " + str(y))
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones Recursivas: Ejemplo
+
+		Supónga que solicita un préstamo de $500.000 durante un año, el prestamista cobra un interés del 10% mensual mediante la modalidad de interes compuesto mes vencido. ¿Cuál es el total del dinero que debe pagar cuando ha transcurrido el año por el cual solicitó el prestamo?
+	</section>
+
+	<section>
+		<h2>Funciones Recursivas: Ejemplo</h2>
+
+		<p>
+			Para calcular el valor solicitado hay que observar que:
+		</p>
+
+		<ul>
+			<li class="fragment">
+				Para cero meses se tiene que hay que pagar
+					$$$500.000$$
+				pues no ha transcurrido ningún mes.
+			</li>
+			<li class="fragment">
+				Para un mes se tiene que hay que pagar
+				$$$500.000 + $500.000 ∗ 0.1 = $$
+				$$[$500.000](1 + 0.1)$$
+				lo prestado más los intereses de un mes.
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Funciones Recursivas: Ejemplo</h2>
+
+		<ul>
+			<li>
+				Para dos meses se tiene que hay que pagar
+					$$($500.000 + $500.000 ∗ 0.1)$$
+				lo prestado más los intereses de un mes
+					$$ + ($500.000 + $500.000 * 0.1) * 0.1$$
+				más los intereses de esa cantidad.
+			</li>
+		</ul>
+
+		<p class="fragment">
+			Lo cual es equivalente a:
+			$$[$500.000](1 + 0.1) + [$500.000](1 + 0.1)0.1 = $$
+			$$􏰄[[$500.000](1 + 0.1)]􏰅(1 + 0.1)$$
+		</p>
+	</section>
+
+	<section data-markdown>
+		## Funciones Recursivas: Ejemplo
+
+		A partir de estos ejemplos, se puede determinar la regla recursiva con la que se puede calcular el interés compuesto mes vencido en general, con lo cual se puede diseñar una función recursiva que permita calcular el valor total a pagar para cualquier monto, cualquier interés y cualquier intervalo de tiempo.
+	</section>
+
+	<section>
+		<h2>Funciones Recursivas: Ejemplo</h2>
+
+		<p>
+			Esa función es la siguiente:
+		</p>
+
+		<p>
+			<i>pago(m, i, n)</i> = <i>valor</i>
+		</p>
+
+		<div class="fragment">
+			<p>
+				donde se tienen las variables:
+			</p>
+
+			<ul>
+				<li>
+					m := Cantidad de dinero solicitado como prestamo
+				</li>
+				<li>
+					i := Interés
+				</li>
+				<li>
+					n := Número de meses por el cual se solicita el pretamo
+				</li>
+				<li>
+					valor := Valor total a pagar por el prestamo de la cantidad m por n meses con un interés i utilizando el método de interés compuesto mes vencido
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<h2>Funciones Recursivas: Ejemplo</h2>
+
+		<p>
+			entonces:
+			$$pago : \mathbb{R}^+ \times \mathbb{R}^+ \times \mathbb{Z}^+ \rightarrow \mathbb{R}^+$$
+			$$(m, i, n) \rightarrow \begin{cases} m, & \text{si $n = 0$;} \\ pago(m, i, n-1) * (1 + i), & \text{en otro caso.}\end{cases}$$
+		</p>
+	</section>
+
+	<section data-markdown>
+		## Funciones Recursivas: Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+float pago(float m, float i, int n)
+{
+	if(n == 0)
+	{
+	    return m;
+	}
+	return pago(m, i, n - 1) * (1 + i);
+}
+
+int main()
+{
+	float m = 0;
+	float i = 0;
+	int n = 0;
+	float y = 0;
+	cout << "Ingrese la cantidad prestada: \t";
+	cin >> m;
+	cout << "Ingrese el interes: \t";
+	cin >> i;
+	cout << "Ingrese el numero de meses: \t";
+	cin >> n;
+	y = pago(m, i, n);
+	cout << "El valor a pagar es: " << y << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones Recursivas: Ejemplo en Python
+
+```python
+def pago(m, i, n):
+	if n == 0:
+	    return m
+	return pago(m, i, n - 1) * (1 + i)
+
+m = float(input("Ingrese la cantidad prestada: \t"))
+i = float(input("Ingrese el interes: \t"))
+n = int(input("Ingrese el numero de meses: \t"))
+y = pago(m, i, n)
+print("El valor a pagar es: " + str(y))
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones Recursivas: Consideraciones
+
+		Se debe tener mucho cuidado en la definición de funciones recursivas, pues si no se hace bien, la función podría requerir de un cálculo infinito o no ser calculable.
+	</section>
+</section>
