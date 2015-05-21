@@ -1,0 +1,120 @@
+<section>
+	<section data-markdown>
+		## Hacer-Mientras (do-while)
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		## Hacer-Mientras (do-while): Definición
+
+		Esta estructura es similar a la estructura while, es usualmente utilizada cuando se sabe con anticipación que las instrucciones en el alcance del ciclo se ejecutarán al menos una vez.
+
+		<!-- .element: class="fragment" -->
+		En esta estructura cíclica la verificación de la condición de parada se realiza al final del ciclo.
+		</script>
+	</section>
+
+	<section data-markdown>
+		## Hacer-Mientras (do-while): Esquema en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+	// Instrucciones
+
+	//Variable = //Inicio;
+	do
+	{
+	    // Instruccion 1
+	    // Instruccion 2
+	    // ...
+	    // Instruccion n
+	    //Actualizacion de la Variable
+	}
+	while(//Condicion);
+
+	// Mas instrucciones
+
+	return 0;
+}
+```
+	</section>
+
+	<section>
+		<h2>Hacer-Mientras (do-while): Ejemplo</h2>
+
+		<p>
+			Calcular la suma de los primeros \(n\) números naturales positivos, es decir, calcular el valor de la expresión:
+		</p>
+
+		<p class="fragment">
+			$$1 + 2 + 3 + \dots + (n - 1) + n$$
+		</p>
+
+		<p class="fragment">
+			que abreviadamante se escribe como:
+		</p>
+
+		<p class="fragment">
+			$$\sum\limits_{i = 1}^{n} i$$
+		</p>
+	</section>
+
+	<section data-markdown>
+		## Hacer-Mientras (do-while): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int suma(int n)
+{
+	int s = 0;
+
+	int i = 1;
+	do
+	{
+	    s += i;
+	    i++;
+	}
+	while(i <= n);
+	return s;
+}
+
+int main()
+{
+	int n = 0;
+	int y = 0;
+	cout << "Ingrese un numero: \t";
+	cin >> n;
+	y = suma(n);
+	cout << "La suma de los numeros desde 1";
+	cout << " hasta " << n << " es: " << y << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section>
+		<h2>Hacer-Mientras (do-while): Ejemplo</h2>
+
+		<p>
+			En la construcción de estas funciones aparecen dos variables que tienen una connotación muy importante:
+		</p>
+
+		<ul>
+			<li class="fragment">
+				La variable \(i\) juega el rol de una variable contadora ya que permite llevar el conteo de cuantos ciclos se han efectuado.
+			</li>
+			<li class="fragment">
+				La variable \(s\) juega el rol de variable acumuladora pues en ésta se acumula o almacena el valor parcial que se desea calcular utilizando el ciclo.
+			</li>
+		</ul>
+	</section>
+</section>

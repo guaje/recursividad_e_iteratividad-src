@@ -1,0 +1,153 @@
+<section>
+	<section data-markdown>
+		## Para (for)
+	</section>
+
+	<section data-markdown>
+		## Para (for): Definición
+
+		Permite ejecutar un bloque de instrucciones para cada uno de los valores en un intervalo determinado.
+	</section>
+
+	<section data-markdown>
+		## Para (for): Esquema en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+	// Instrucciones
+
+	for(//Variable = //Inicio; //Condicion; //Paso)
+	{
+	    // Instruccion 1
+	    // Instruccion 2
+	    // ...
+	    // Instruccion n
+	}
+
+	// Mas instrucciones
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Para (for): Esquema en Python
+
+```python
+# Instrucciones
+
+for #Variable in range(#Fin):
+	# Instruccion 1
+	# Instruccion 2
+	# ...
+	# Instruccion m
+
+for #Variable in range(#Inicio, #Fin):
+	# Instruccion 1
+	# Instruccion 2
+	# ...
+	# Instruccion n
+
+for #Variable in range(#Inicio, #Fin, #Paso):
+	# Instruccion 1
+	# Instruccion 2
+	# ...
+	# Instruccion o
+
+# Mas instrucciones
+```
+	</section>
+
+	<section>
+		<h2>Para (for): Ejemplo</h2>
+
+		<p>
+			Calcular la suma de los primeros \(n\) números naturales positivos, es decir, calcular el valor de la expresión:
+		</p>
+
+		<p class="fragment">
+			$$1 + 2 + 3 + \dots + (n - 1) + n$$
+		</p>
+
+		<p class="fragment">
+			que abreviadamante se escribe como:
+		</p>
+
+		<p class="fragment">
+			$$\sum\limits_{i = 1}^{n} i$$
+		</p>
+	</section>
+
+	<section data-markdown>
+		## Para (for): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int suma(int n)
+{
+	int s = 0;
+	for(int i = 1; i <= n; i++)
+	{
+	    s += i;
+	}
+	return s;
+}
+
+int main()
+{
+	int n = 0;
+	int y = 0;
+	cout << "Ingrese un numero: \t";
+	cin >> n;
+	y = suma(n);
+	cout << "La suma de los numeros desde 1";
+	cout << " hasta " << n << " es: " << y << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Para (for): Ejemplo en Python
+
+```python
+def suma(n):
+	s = 0
+	for i in range(1, n + 1):
+	    s += i
+	return s
+
+n = int(input("Ingrese un numero: \t"))
+y = suma(n)
+print("La suma de los numeros desde 1", end="")
+print(" hasta " + str(n) + " es: " + str(y))
+```
+	</section>
+
+	<section>
+		<h2>Para (for): Ejemplo</h2>
+
+		<p>
+			En la construcción de estas funciones aparecen dos variables que tienen una connotación muy importante:
+		</p>
+
+		<ul>
+			<li class="fragment">
+				La variable \(i\) juega el rol de una variable contadora ya que permite llevar el conteo de cuantos ciclos se han efectuado.
+			</li>
+			<li class="fragment">
+				La variable \(s\) juega el rol de variable acumuladora pues en ésta se acumula o almacena el valor parcial que se desea calcular utilizando el ciclo.
+			</li>
+		</ul>
+	</section>
+</section>
