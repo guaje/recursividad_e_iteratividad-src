@@ -147,7 +147,7 @@ def potencia(b, n):
 	return potencia(b, n - 1) * b
 
 b = float(input("Ingrese la base: \t"))
-n = float(input("Ingrese el exponente: \t"))
+n = int(input("Ingrese el exponente: \t"))
 y = potencia(b, n)
 print(str(b) + " elevado a la " + str(n), end="")
 print(" es igual a: " + str(y))

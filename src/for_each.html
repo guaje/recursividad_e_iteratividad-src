@@ -1,0 +1,109 @@
+<section>
+	<section data-markdown>
+		## Para-cada (for)
+	</section>
+
+	<section data-markdown>
+		## Para-cada (for): Definición
+
+		Permite ejecutar un bloque de instrucciones para cada uno de los elementos de un conjunto.
+	</section>
+
+	<section data-markdown>
+		## Para-cada (for): Esquema en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+	// Instrucciones
+
+	for(&//Variable : //Conjunto)
+	{
+	    // Instruccion 1
+	    // Instruccion 2
+	    // ...
+	    // Instruccion n
+	}
+
+	// Mas instrucciones
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Para-cada (for): Esquema en Python
+
+```python
+# Instrucciones
+
+for #Variable in #Conjunto:
+	# Instruccion 1
+	# Instruccion 2
+	# ...
+	# Instruccion n
+
+# Mas instrucciones
+```
+	</section>
+
+	<section data-markdown>
+		## Para-cada (for): Ejemplo
+
+		En este ejemplo se usará un ciclo para-cada que cuente el número de elementos pares de un conjunto dado.
+	</section>
+
+	<section data-markdown>
+		## Para-cada (for): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+bool esPar(int n)
+{
+	return n % 2 == 0;
+}
+
+int main()
+{
+	int c[] = {0, -2, -1, 30, 75};
+	int t = 0;
+	for(int &n : c)
+	{
+	    if(esPar(n))
+	    {
+	        t++;
+	    }
+	}
+	cout << "La cantidad de numeros pares en ";
+	cout << "el conjunto dado es: " << t << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Para (for): Ejemplo en Python
+
+```python
+def esPar(n):
+	return n % 2 == 0
+
+c = [0, -2, -1, 30, 75]
+t = 0;
+for n in c:
+	if esPar(n):
+	    t += 1
+print("La cantidad de numeros pares en ", end="")
+print("el conjunto dado es: " + str(t))
+```
+	</section>
+</section>

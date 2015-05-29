@@ -64,6 +64,120 @@ for #Variable in range(#Inicio, #Fin, #Paso):
 ```
 	</section>
 
+	<section data-markdown>
+		## Para (for): Ejemplo
+
+		En este ejemplo se definirá una función iterativa que permita hallar un número real elevado a un número natural.
+	</section>
+
+	<section data-markdown>
+		## Para (for): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+float potencia(float b, int n)
+{
+	float resultado = 1;
+	for(int i = n; i > 0; i--)
+	{
+	    resultado *= b;
+	}
+	return resultado;
+}
+
+int main()
+{
+	float b = 0;
+	int n = 0;
+	float y = 0;
+	cout << "Ingrese la base: \t";
+	cin >> b;
+	cout << "Ingrese el exponente: \t";
+	cin >> n;
+	y = potencia(b, n);
+	cout << b << " elevado a la " << n;
+	cout << " es igual a: " << y << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Para (for): Ejemplo en Python
+
+```python
+def potencia(b, n):
+	resultado = 1
+	for i in range(n, 0, -1):
+	    resultado *= b
+	return resultado
+
+b = float(input("Ingrese la base: \t"))
+n = int(input("Ingrese el exponente: \t"))
+y = potencia(b, n)
+print(str(b) + " elevado a la " + str(n), end="")
+print(" es igual a: " + str(y))
+```
+	</section>
+
+	<section data-markdown>
+		## Para (for): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+float potencia(float b, int n)
+{
+	float resultado = 1;
+	for(int i = 1; i <= n; i++)
+	{
+	    resultado *= b;
+	}
+	return resultado;
+}
+
+int main()
+{
+	float b = 0;
+	int n = 0;
+	float y = 0;
+	cout << "Ingrese la base: \t";
+	cin >> b;
+	cout << "Ingrese el exponente: \t";
+	cin >> n;
+	y = potencia(b, n);
+	cout << b << " elevado a la " << n;
+	cout << " es igual a: " << y << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Para (for): Ejemplo en Python
+
+```python
+def potencia(b, n):
+	resultado = 1
+	for i in range(1, n + 1):
+	    resultado *= b
+	return resultado
+
+b = float(input("Ingrese la base: \t"))
+n = int(input("Ingrese el exponente: \t"))
+y = potencia(b, n)
+print(str(b) + " elevado a la " + str(n), end="")
+print(" es igual a: " + str(y))
+```
+	</section>
+
 	<section>
 		<h2>Para (for): Ejemplo</h2>
 

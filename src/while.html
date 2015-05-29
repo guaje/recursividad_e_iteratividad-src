@@ -66,6 +66,132 @@ while #Condicion:
 ```
 	</section>
 
+	<section data-markdown>
+		## Mientras (while): Ejemplo
+
+		En este ejemplo se definirá una función iterativa que permita hallar un número real elevado a un número natural.
+	</section>
+
+	<section data-markdown>
+		## Mientras (while): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+float potencia(float b, int n)
+{
+	float resultado = 1;
+
+	int i = n;
+	while(i > 0)
+	{
+	    resultado *= b;
+	    i--;
+	}
+	return resultado;
+}
+
+int main()
+{
+	float b = 0;
+	int n = 0;
+	float y = 0;
+	cout << "Ingrese la base: \t";
+	cin >> b;
+	cout << "Ingrese el exponente: \t";
+	cin >> n;
+	y = potencia(b, n);
+	cout << b << " elevado a la " << n;
+	cout << " es igual a: " << y << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Mientras (while): Ejemplo en Python
+
+```python
+def potencia(b, n):
+	resultado = 1
+
+	i = n
+	while i > 0:
+	    resultado *= b
+	    i -= 1
+	return resultado
+
+b = float(input("Ingrese la base: \t"))
+n = int(input("Ingrese el exponente: \t"))
+y = potencia(b, n)
+print(str(b) + " elevado a la " + str(n), end="")
+print(" es igual a: " + str(y))
+```
+	</section>
+
+	<section data-markdown>
+		## Mientras (while): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+float potencia(float b, int n)
+{
+	float resultado = 1;
+
+	int i = 1;
+	while(i <= n)
+	{
+	    resultado *= b;
+	    i++;
+	}
+	return resultado;
+}
+
+int main()
+{
+	float b = 0;
+	int n = 0;
+	float y = 0;
+	cout << "Ingrese la base: \t";
+	cin >> b;
+	cout << "Ingrese el exponente: \t";
+	cin >> n;
+	y = potencia(b, n);
+	cout << b << " elevado a la " << n;
+	cout << " es igual a: " << y << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Mientras (while): Ejemplo en Python
+
+```python
+def potencia(b, n):
+	resultado = 1
+
+	i = 1
+	while i <= n:
+	    resultado *= b
+	    i += 1
+	return resultado
+
+b = float(input("Ingrese la base: \t"))
+n = int(input("Ingrese el exponente: \t"))
+y = potencia(b, n)
+print(str(b) + " elevado a la " + str(n), end="")
+print(" es igual a: " + str(y))
+```
+	</section>
+
 	<section>
 		<h2>Mientras (while): Ejemplo</h2>
 

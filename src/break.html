@@ -1,0 +1,117 @@
+<section>
+	<section data-markdown>
+		## Romper (break)
+	</section>
+
+	<section data-markdown>
+		## Romper (break): Definición
+
+		Esta sentencia termina la ejecución de un ciclo.
+	</section>
+
+	<section data-markdown>
+		## Romper (break): Ejemplo
+
+		Imprimir los números enteros en un intervalo dado.
+	</section>
+
+	<section data-markdown>
+		## Romper (break): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+void imprimir(int a, int b)
+{
+	while(a <= b)
+	{
+	    cout << a << endl;
+	    a++;
+	}
+}
+
+int main()
+{
+	int a = 0;
+	int b = 0;
+	cout << "Ingrese un numero: \t";
+	cin >> a;
+	cout << "Ingrese un numero: \t";
+	cin >> b;
+	imprimir(a, b);
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Romper (break): Ejemplo en Python
+
+```python
+def imprimir(a, b):
+	while a <= b:
+	    print(str(a))
+	    a += 1
+
+a = int(input("Ingrese un numero: \t"))
+b = int(input("Ingrese un numero: \t"))
+imprimir(a, b)
+```
+	</section>
+
+	<section data-markdown>
+		## Romper (break): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+void imprimir(int a, int b)
+{
+	while(a <= b)
+	{
+	    if(a == 0)
+	    {
+	        break;
+	    }
+	    cout << a << endl;
+	    a++;
+	}
+}
+
+int main()
+{
+	int a = 0;
+	int b = 0;
+	cout << "Ingrese un numero: \t";
+	cin >> a;
+	cout << "Ingrese un numero: \t";
+	cin >> b;
+	imprimir(a, b);
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Romper (break): Ejemplo en Python
+
+```python
+def imprimir(a, b):
+	while a <= b:
+	    if a == 0:
+	        break
+	    print(str(a))
+	    a += 1
+
+a = int(input("Ingrese un numero: \t"))
+b = int(input("Ingrese un numero: \t"))
+imprimir(a, b)
+```
+	</section>
+</section>

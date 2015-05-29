@@ -1,0 +1,123 @@
+<section>
+	<section data-markdown>
+		## Continuar (continue)
+	</section>
+
+	<section data-markdown>
+		## Continuar (continue): Definición
+
+		Esta sentencia obliga a ejecutar la siguiente iteración del ciclo.
+	</section>
+
+	<section data-markdown>
+		## Continuar (continue): Ejemplo
+
+		En este ejemplo se usará la sentencia continuar en un ciclo para-cada que cuente el número de elementos pares de un conjunto dado.
+	</section>
+
+	<section data-markdown>
+		## Continuar (continue): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+bool esPar(int n)
+{
+	return n % 2 == 0;
+}
+
+int main()
+{
+	int c[] = {0, -2, -1, 30, 75};
+	int t = 0;
+	for(int &n : c)
+	{
+	    if(esPar(n))
+	    {
+	        t++;
+	    }
+	    else
+	    {
+	    	continue;
+	    }
+	}
+	cout << "La cantidad de numeros pares en ";
+	cout << "el conjunto dado es: " << t << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Continuar (continue): Ejemplo en Python
+
+```python
+def esPar(n):
+	return n % 2 == 0
+
+c = [0, -2, -1, 30, 75]
+t = 0;
+for n in c:
+	if esPar(n):
+	    t += 1
+	else:
+	    continue
+print("La cantidad de numeros pares en ", end="")
+print("el conjunto dado es: " + str(t))
+```
+	</section>
+
+	<section data-markdown>
+		## Continuar (continue): Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+bool esPar(int n)
+{
+	return n % 2 == 0;
+}
+
+int main()
+{
+	int c[] = {0, -2, -1, 30, 75};
+	int t = 0;
+	for(int &n : c)
+	{
+	    if(!esPar(n))
+	    {
+	        continue;
+	    }
+	    t++;
+	}
+	cout << "La cantidad de numeros pares en ";
+	cout << "el conjunto dado es: " << t << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Continuar (continue): Ejemplo en Python
+
+```python
+def esPar(n):
+	return n % 2 == 0
+
+c = [0, -2, -1, 30, 75]
+t = 0;
+for n in c:
+	if not esPar(n):
+	    continue
+	t += 1
+print("La cantidad de numeros pares en ", end="")
+print("el conjunto dado es: " + str(t))
+```
+	</section>
+</section>
